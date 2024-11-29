@@ -15,8 +15,45 @@
     height: 100vh;
     margin: 0;
     position: relative;
+    overflow: hidden;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
   }
   
+  /* Splash Screen Styling */
+  .splash-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    animation: splashFadeOut 2s forwards 2s;
+  }
+  
+  .splash-content {
+    text-align: center;
+    color: white;
+  }
+  
+  .icon {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+  }
+  
+  .splash-screen h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    opacity: 0;
+    animation: fadeInUp 1s forwards 0.5s;
+  }
+  
+  /* Main Content */
   .container {
     text-align: center;
     background: #333;
@@ -25,11 +62,15 @@
     width: 80%;
     max-width: 600px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    animation: slideUp 1s forwards 3s; /* Animation starts after splash screen fades out */
   }
   
   h1 {
     font-size: 2rem;
     margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeInUp 1s forwards 1s;
   }
   
   input {
@@ -39,6 +80,8 @@
     border-radius: 5px;
     border: none;
     margin-bottom: 10px;
+    opacity: 0;
+    animation: fadeInUp 1s forwards 1.5s;
   }
   
   button {
@@ -50,6 +93,8 @@
     cursor: pointer;
     color: white;
     transition: background 0.3s ease;
+    opacity: 0;
+    animation: fadeInUp 1s forwards 2s;
   }
   
   button:hover {
@@ -71,6 +116,8 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s ease;
+    opacity: 0;
+    animation: slideInFromLeft 1s forwards;
   }
   
   .symbol-option:hover {
@@ -96,5 +143,57 @@
     bottom: 20px;
     opacity: 1;
     visibility: visible;
+  }
+  
+  /* Keyframe animations for the intro */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes splashFadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideUp {
+    from {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideInFromLeft {
+    from {
+      transform: translateX(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
   }
   
