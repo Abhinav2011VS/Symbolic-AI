@@ -14,8 +14,18 @@ function generateSymbols() {
     const generatingMessage = document.getElementById("generatingMessage");
     generatingMessage.classList.add("show");
 
-    // Random delay between 4 to 10 seconds for the generation
-    const generationDelay = Math.floor(Math.random() * 7) + 4; // 4 to 10 seconds
+    // Calculate delay based on input text length
+    const charCount = inputText.length;
+    let generationDelay;
+
+    // For inputs with 1 to 10 characters
+    if (charCount >= 1 && charCount <= 10) {
+        generationDelay = Math.random() * 0.5 * charCount + 0.5 * charCount; // Gradually increase time per character
+    } 
+    // For inputs longer than 10 characters
+    else {
+        generationDelay = Math.random() * 4 + 6; // Between 6 seconds and 10 seconds
+    }
 
     setTimeout(() => {
         // Hide "Generating..." message and start the generation process
@@ -41,8 +51,8 @@ function generateSymbols() {
             outputContainer.appendChild(div);
         });
 
-        generationCount++; // You can keep incrementing if you want to track how many generations have occurred, but there's no cap now.
-    }, generationDelay * 1000);
+        generationCount++; // Track the number of generations
+    }, generationDelay * 1000); // Convert delay to milliseconds
 }
 
 // Function to generate a random variation of text
