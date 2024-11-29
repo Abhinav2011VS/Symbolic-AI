@@ -3,248 +3,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #1e1e1e;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    position: relative;
-    overflow: hidden;
-    opacity: 0;
-    animation: fadeIn 1.5s forwards;
-  }
-  
-  /* Splash Screen Styling */
-  .splash-screen {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 1;
-    animation: splashFadeOut 2s forwards 2s;
-  }
-  
-  .splash-content {
-    text-align: center;
-    color: white;
-  }
-  
-  .icon {
-    width: 100px;
-    height: 100px;
-    margin-bottom: 20px;
-  }
-  
-  .splash-screen h1 {
-    font-size: 3rem;
-    font-weight: bold;
-    opacity: 0;
-    animation: fadeInUp 1s forwards 0.5s;
-  }
-  
-  /* Main Content */
-  .container {
-    text-align: center;
-    background: #333;
-    padding: 30px;
-    border-radius: 10px;
-    width: 80%;
-    max-width: 600px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-    opacity: 0;
-    animation: slideUp 1s forwards 3s; /* Animation starts after splash screen fades out */
-  }
-  
-  h1 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    opacity: 0;
-    animation: fadeInUp 1s forwards 1s;
-  }
-  
-  input {
-    width: 80%;
-    padding: 10px;
-    font-size: 1.2rem;
-    border-radius: 5px;
-    border: none;
-    margin-bottom: 10px;
-    opacity: 0;
-    animation: fadeInUp 1s forwards 1.5s;
-  }
-  
-  button {
-    padding: 10px 20px;
-    font-size: 1rem;
-    background-color: #555;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    color: white;
-    transition: background 0.3s ease;
-    opacity: 0;
-    animation: fadeInUp 1s forwards 2s;
-  }
-  
-  button:hover {
-    background-color: #444;
-  }
-  
-  #output {
-    margin-top: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .symbol-option {
-    margin: 10px;
-    font-size: 1.5rem;
-    padding: 10px;
-    background-color: #444;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-    opacity: 0;
-    animation: slideInFromLeft 1s forwards;
-  }
-  
-  .symbol-option:hover {
-    background-color: #555;
-  }
-  
-  /* Notification styling */
-  .notification {
-    position: fixed;
-    bottom: -50px;
-    right: 20px;
-    background-color: #28a745;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.5s ease-in-out;
-    z-index: 999;
-  }
-  
-  .notification.show {
-    bottom: 20px;
-    opacity: 1;
-    visibility: visible;
-  }
-  
-  /* Keyframe animations for the intro */
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  
-  @keyframes splashFadeOut {
-    from {
-      opacity: 1;
-    }
-    to {
-      opacity: 0;
-    }
-  }
-  
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  @keyframes slideUp {
-    from {
-      transform: translateY(50px);
-      opacity: 0;
-    }
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-  
-  @keyframes slideInFromLeft {
-    from {
-      transform: translateX(-50px);
-      opacity: 0;
-    }
-    to {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-  
-  /* Animation for symbol generation */
-.symbol-option {
-    margin: 10px;
-    font-size: 1.5rem;
-    padding: 10px;
-    background-color: #444;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.3s ease;
-    opacity: 0;
-    animation: fadeInScale 1s forwards; /* Fade-in and scale-up animation */
-  }
-  
-  .symbol-option:hover {
-    background-color: #555;
-    transform: scale(1.05); /* Slight zoom-in effect */
-  }
-  
-  /* Keyframe animations */
-  @keyframes fadeInScale {
-    from {
-      opacity: 0;
-      transform: scale(0.5);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-  
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  /* Global styling */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    transition: all 0.3s ease; /* Smooth global transition */
 }
-  
+
 body {
     font-family: Arial, sans-serif;
     background-color: #1e1e1e;
@@ -257,9 +18,10 @@ body {
     position: relative;
     overflow: hidden;
     opacity: 0;
-    animation: fadeIn 1.5s forwards;
+    animation: fadeIn 2s forwards;
+    animation-delay: 0.5s; /* Delay before body fades in */
 }
-  
+
 /* Splash Screen Styling */
 .splash-screen {
     position: absolute;
@@ -274,25 +36,26 @@ body {
     opacity: 1;
     animation: splashFadeOut 2s forwards 2s;
 }
-  
+
 .splash-content {
     text-align: center;
     color: white;
 }
-  
+
 .icon {
     width: 100px;
     height: 100px;
     margin-bottom: 20px;
+    animation: bounceIcon 2s ease infinite alternate, iconSpin 4s linear infinite; /* Bounce and spin animation */
 }
-  
+
 .splash-screen h1 {
     font-size: 3rem;
     font-weight: bold;
     opacity: 0;
-    animation: fadeInUp 1s forwards 0.5s;
+    animation: fadeInUp 1.5s forwards 0.5s, colorChange 4s ease-in-out infinite alternate; /* Fade-in with color change */
 }
-  
+
 /* Main Content */
 .container {
     text-align: center;
@@ -301,18 +64,18 @@ body {
     border-radius: 10px;
     width: 80%;
     max-width: 600px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
     opacity: 0;
-    animation: slideUp 1s forwards 3s; /* Animation starts after splash screen fades out */
+    animation: slideUp 1.5s forwards 3s; /* Animation starts after splash screen fades out */
 }
-  
+
 h1 {
     font-size: 2rem;
     margin-bottom: 20px;
     opacity: 0;
-    animation: fadeInUp 1s forwards 1s;
+    animation: fadeInUp 1.5s forwards 1s, textGlow 2s ease-in-out infinite alternate, textUnderline 2s ease-in-out forwards; /* Glowing and underlining effect */
 }
-  
+
 input {
     width: 80%;
     padding: 10px;
@@ -321,9 +84,9 @@ input {
     border: none;
     margin-bottom: 10px;
     opacity: 0;
-    animation: fadeInUp 1s forwards 1.5s;
+    animation: fadeInUp 1s forwards 1.5s, inputShake 1s ease-in-out infinite, focusPulse 1s ease infinite; /* Shake and pulse effect */
 }
-  
+
 button {
     padding: 10px 20px;
     font-size: 1rem;
@@ -332,22 +95,24 @@ button {
     border-radius: 5px;
     cursor: pointer;
     color: white;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Added box shadow animation */
     opacity: 0;
-    animation: fadeInUp 1s forwards 2s;
+    animation: fadeInUp 1s forwards 2s, buttonPulse 1.5s ease-in-out infinite alternate; /* Pulse effect */
 }
-  
+
 button:hover {
     background-color: #444;
+    transform: scale(1.1); /* Slight zoom effect */
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.3); /* Box shadow on hover */
 }
-  
+
 #output {
     margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
-  
+
 .symbol-option {
     margin: 10px;
     font-size: 1.5rem;
@@ -355,16 +120,17 @@ button:hover {
     background-color: #444;
     border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     opacity: 0;
-    animation: slideInFromLeft 1s forwards;
+    animation: slideInFromLeft 1.5s forwards, symbolHoverGlow 1s ease infinite alternate; /* Glow effect on hover */
 }
-  
+
 .symbol-option:hover {
     background-color: #555;
+    transform: scale(1.1); /* Slight zoom effect */
+    box-shadow: 0px 0px 15px rgba(0, 255, 0, 0.4); /* Box shadow glow effect */
 }
-  
-/* Notification styling */
+
 .notification {
     position: fixed;
     bottom: -50px;
@@ -378,14 +144,13 @@ button:hover {
     transition: all 0.5s ease-in-out;
     z-index: 999;
 }
-  
+
 .notification.show {
     bottom: 20px;
     opacity: 1;
     visibility: visible;
 }
 
-/* Generating message */
 .generating-message {
     position: fixed;
     bottom: 20px;
@@ -401,13 +166,30 @@ button:hover {
     transition: opacity 0.3s ease-in-out;
     z-index: 998;
 }
-  
+
 .generating-message.show {
     opacity: 1;
     visibility: visible;
 }
 
-/* Keyframe animations for the intro */
+/* Footer styling */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    opacity: 0;
+    animation: fadeIn 2s forwards 4s; /* Fade-in effect for the footer */
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* Keyframe Animations */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -416,7 +198,7 @@ button:hover {
         opacity: 1;
     }
 }
-  
+
 @keyframes splashFadeOut {
     from {
         opacity: 1;
@@ -425,7 +207,7 @@ button:hover {
         opacity: 0;
     }
 }
-  
+
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -436,7 +218,7 @@ button:hover {
         transform: translateY(0);
     }
 }
-  
+
 @keyframes slideUp {
     from {
         transform: translateY(50px);
@@ -447,7 +229,7 @@ button:hover {
         opacity: 1;
     }
 }
-  
+
 @keyframes slideInFromLeft {
     from {
         transform: translateX(-50px);
@@ -459,16 +241,110 @@ button:hover {
     }
 }
 
-.footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #333;
-    color: white;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-  }
-  
-  .footer p {
-    margin: 0;
-  }
+/* Bounce icon animation */
+@keyframes bounceIcon {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Icon spin animation */
+@keyframes iconSpin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Glowing text effect */
+@keyframes textGlow {
+    0% {
+        text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
+    }
+    50% {
+        text-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff;
+    }
+    100% {
+        text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
+    }
+}
+
+/* Input Shake effect */
+@keyframes inputShake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+    75% {
+        transform: translateX(-5px);
+    }
+}
+
+/* Focus pulse effect on input */
+@keyframes focusPulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Button Pulse effect */
+@keyframes buttonPulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Symbol Hover Glow effect */
+@keyframes symbolHoverGlow {
+    0% {
+        box-shadow: 0 0 10px #fff, 0 0 20px #fff;
+    }
+    50% {
+        box-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff;
+    }
+    100% {
+        box-shadow: 0 0 10px #fff, 0 0 20px #fff;
+    }
+}
+
+/* Text underline animation */
+@keyframes textUnderline {
+    0% {
+        border-bottom: 2px solid transparent;
+    }
+    100% {
+        border-bottom: 2px solid #ff00ff;
+    }
+}
+
+/* Color changing animation */
+@keyframes colorChange {
+    0% {
+        color: #fff;
+    }
+    50% {
+        color: #00f;
+    }
+    100% {
+        color: #fff;
+    }
+}
