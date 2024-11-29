@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Symbolic AI</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="favicon.svg"> <!-- You can replace 'favicon.svg' with the path to your actual icon -->
+  <link rel="icon" href="favicon.svg">
 </head>
 <body>
   <!-- Splash Screen -->
   <div id="splashScreen" class="splash-screen">
     <div class="splash-content">
-      <img src="favicon.svg" alt="Icon" class="icon" /> <!-- Same here for the icon -->
+      <img src="favicon.svg" alt="Icon" class="icon" />
       <h1>Symbolic AI</h1>
     </div>
   </div>
@@ -20,12 +20,17 @@
   <div class="container">
     <h1>Symbolic AI</h1>
     <input type="text" id="inputText" placeholder="Enter text here" />
-    <button onclick="generateSymbols()">Generate</button>
+    <button id="generateButton" onclick="generateSymbols()">Generate</button>
     <div id="output"></div>
   </div>
 
   <div id="notification" class="notification">Text copied!</div>
+  <div id="generatingMessage" class="generating-message">Generating...</div>
 
   <script src="script.js"></script>
+
+  <footer class="footer">
+    <p>&copy; 2024 Abhinav | &copy; 2024 Symbolic AI. All rights reserved.</p>
+  </footer>
 </body>
 </html>
