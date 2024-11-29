@@ -8,8 +8,8 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #1e1e1e;
-    color: white;
+    background-color: #f4f4f4;
+    color: #333;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,7 +29,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #333;
+    background-color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,7 +39,7 @@ body {
 
 .splash-content {
     text-align: center;
-    color: white;
+    color: #333;
 }
 
 .icon {
@@ -59,13 +59,13 @@ body {
 /* Main Content */
 .container {
     text-align: center;
-    background: #333; /* Dark background for container */
-    color: white; /* Light text for visibility */
+    background: #fff; /* Light background for container */
+    color: #333; /* Dark text for readability */
     padding: 30px;
     border-radius: 10px;
     width: 80%;
     max-width: 600px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
     opacity: 0;
     animation: slideUp 1.5s forwards 3s;
 }
@@ -78,13 +78,13 @@ h1 {
 }
 
 input {
-    background-color: #444;
-    color: white;
     width: 80%;
     padding: 10px;
     font-size: 1.2rem;
     border-radius: 5px;
-    border: 1px solid #555;
+    background-color: #f1f1f1;
+    color: #333;
+    border: 1px solid #ccc;
     margin-bottom: 10px;
     opacity: 0;
     animation: fadeInUp 1s forwards 1.5s, inputShake 1s ease-in-out infinite, focusPulse 1s ease infinite; /* Shake and pulse effect */
@@ -93,20 +93,20 @@ input {
 button {
     padding: 10px 20px;
     font-size: 1rem;
-    background-color: #555;
+    background-color: #007bff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     color: white;
-    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Added box shadow animation */
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     opacity: 0;
     animation: fadeInUp 1s forwards 2s, buttonPulse 1.5s ease-in-out infinite alternate; /* Pulse effect */
 }
 
 button:hover {
-    background-color: #444;
+    background-color: #0056b3;
     transform: scale(1.1); /* Slight zoom effect */
-    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.3); /* Box shadow on hover */
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); /* Box shadow on hover */
 }
 
 #output {
@@ -120,8 +120,8 @@ button:hover {
     margin: 10px;
     font-size: 1.5rem;
     padding: 10px;
-    background-color: #444;
-    color: white;
+    background-color: #f1f1f1;
+    color: #333;
     border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
@@ -130,9 +130,9 @@ button:hover {
 }
 
 .symbol-option:hover {
-    background-color: #555;
+    background-color: #e0e0e0;
     transform: scale(1.1); /* Slight zoom effect */
-    box-shadow: 0px 0px 15px rgba(0, 255, 0, 0.4); /* Box shadow glow effect */
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1); /* Box shadow glow effect */
 }
 
 .notification {
@@ -180,8 +180,8 @@ button:hover {
 .footer {
     text-align: center;
     padding: 20px;
-    background-color: #333;
-    color: white;
+    background-color: #fff;
+    color: #333;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -323,7 +323,7 @@ button:hover {
         box-shadow: 0 0 10px #fff, 0 0 20px #fff;
     }
     50% {
-        box-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff;
+        box-shadow: 0 0 15px #ff00ff, 0 0 25px #ff00ff;
     }
     100% {
         box-shadow: 0 0 10px #fff, 0 0 20px #fff;
@@ -343,18 +343,18 @@ button:hover {
 /* Color changing animation */
 @keyframes colorChange {
     0% {
-        color: #fff;
+        color: #333;
     }
     50% {
-        color: #00f;
+        color: #007bff;
     }
     100% {
-        color: #fff;
+        color: #333;
     }
 }
 
 .theme-switcher-label {
     font-size: 1rem;
     margin-right: 10px;
-    color: white;
-}
+    color: black;
+  }

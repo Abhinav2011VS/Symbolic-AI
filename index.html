@@ -4,10 +4,84 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Symbolic AI</title>
+  <!-- Base styles (dark mode) -->
   <link rel="stylesheet" href="styles.css">
+  
+  <!-- Light mode styles (disabled by default) -->
+  <link rel="stylesheet" href="styles-light.css" id="lightThemeLink" disabled>  
+  
   <link rel="icon" href="favicon.svg">
+  <style>
+    /* Default Styles for Dark Mode */
+    body {
+      transition: all 0.6s ease;
+    }
+
+    /* Theme Switcher Slider Styles */
+    .theme-switcher-container {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 1000; /* Make sure the switch is on top of other elements */
+    }
+
+    .theme-switcher {
+      width: 60px;
+      height: 30px;
+      background-color: #555;
+      border-radius: 30px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      position: relative;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .theme-switcher .slider {
+      width: 26px;
+      height: 26px;
+      background-color: white;
+      border-radius: 50%;
+      position: absolute;
+      left: 4px;
+      transition: transform 0.3s ease;
+    }
+
+    /* When active, change the background and move the slider */
+    .theme-switcher.active {
+      background-color: #007bff;
+    }
+
+    .theme-switcher.active .slider {
+      transform: translateX(30px);
+    }
+
+    /* Light Mode Styles */
+    body.light-mode {
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    body.light-mode .theme-switcher {
+      background-color: #007bff;
+    }
+
+  </style>
 </head>
 <body>
+  <!-- Theme Switcher Toggle -->
+  <div class="theme-switcher-container" id="themeSwitcherContainer">
+    <span class="theme-switcher-label" id="themeLabel">Dark Mode</span>
+    <div class="theme-switcher" id="themeSwitcher">
+      <div class="slider"></div>
+    </div>
+  </div>
+
   <!-- Splash Screen -->
   <div id="splashScreen" class="splash-screen">
     <div class="splash-content">
@@ -26,6 +100,58 @@
 
   <div id="notification" class="notification">Text copied!</div>
   <div id="generatingMessage" class="generating-message">Generating...</div>
+
+  <script>
+    // Function to toggle theme between dark and light mode
+    function toggleTheme() {
+      const body = document.body;
+      const themeSwitcher = document.getElementById('themeSwitcher');
+      const themeLabel = document.getElementById('themeLabel');
+      const lightThemeLink = document.getElementById('lightThemeLink'); // Get the light theme CSS link tag
+
+      // Toggle light mode class on body
+      body.classList.toggle('light-mode');
+      themeSwitcher.classList.toggle('active');
+
+      // Enable or disable the light mode stylesheet
+      if (body.classList.contains('light-mode')) {
+        themeLabel.textContent = 'Light Mode'; // Change label text
+        lightThemeLink.disabled = false; // Enable light theme styles
+        localStorage.setItem('theme', 'light'); // Save the light mode preference in localStorage
+      } else {
+        themeLabel.textContent = 'Dark Mode'; // Change label text
+        lightThemeLink.disabled = true; // Disable light theme styles
+        localStorage.setItem('theme', 'dark'); // Save the dark mode preference in localStorage
+      }
+    }
+
+    // Function to load the theme from localStorage
+    function loadTheme() {
+      const savedTheme = localStorage.getItem('theme');
+      const body = document.body;
+      const themeSwitcher = document.getElementById('themeSwitcher');
+      const themeLabel = document.getElementById('themeLabel');
+      const lightThemeLink = document.getElementById('lightThemeLink'); // link element for light theme
+
+      if (savedTheme === 'light') {
+        body.classList.add('light-mode');
+        themeSwitcher.classList.add('active');
+        themeLabel.textContent = 'Light Mode'; // Set label to Light Mode
+        lightThemeLink.disabled = false; // Enable light theme styles
+      } else {
+        body.classList.remove('light-mode');
+        themeSwitcher.classList.remove('active');
+        themeLabel.textContent = 'Dark Mode'; // Set label to Dark Mode
+        lightThemeLink.disabled = true; // Disable light theme styles
+      }
+    }
+
+    // Call the loadTheme function when the page loads to apply saved theme
+    document.addEventListener('DOMContentLoaded', loadTheme);
+
+    // Event listener for theme switcher toggle
+    document.getElementById('themeSwitcherContainer').addEventListener('click', toggleTheme);
+  </script>
 
   <script src="script.js"></script>
 
