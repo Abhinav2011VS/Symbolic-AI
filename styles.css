@@ -288,19 +288,6 @@ button:hover {
     }
 }
 
-/* Symbol Hover Glow effect */
-@keyframes symbolHoverGlow {
-    0% {
-        box-shadow: 0 0 10px #fff, 0 0 20px #fff;
-    }
-    50% {
-        box-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff;
-    }
-    100% {
-        box-shadow: 0 0 10px #fff, 0 0 20px #fff;
-    }
-}
-
 /* Text underline animation */
 @keyframes textUnderline {
     0% {
