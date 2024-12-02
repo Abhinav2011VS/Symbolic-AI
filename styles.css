@@ -265,35 +265,6 @@ button:hover {
     }
 }
 
-/* Glowing text effect */
-@keyframes textGlow {
-    0% {
-        text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
-    }
-    50% {
-        text-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff;
-    }
-    100% {
-        text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
-    }
-}
-
-/* Input Shake effect */
-@keyframes inputShake {
-    0%, 100% {
-        transform: translateX(0);
-    }
-    25% {
-        transform: translateX(-5px);
-    }
-    50% {
-        transform: translateX(5px);
-    }
-    75% {
-        transform: translateX(-5px);
-    }
-}
-
 /* Focus pulse effect on input */
 @keyframes focusPulse {
     0%, 100% {
@@ -337,19 +308,6 @@ button:hover {
     }
     100% {
         border-bottom: 2px solid #ff00ff;
-    }
-}
-
-/* Color changing animation */
-@keyframes colorChange {
-    0% {
-        color: #fff;
-    }
-    50% {
-        color: #00f;
-    }
-    100% {
-        color: #fff;
     }
 }
 
